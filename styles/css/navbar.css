@@ -1,0 +1,71 @@
+/* ./styles/css/navbar.css */
+.navbar {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+  padding: 0px 20px 0px 20px;
+  box-sizing: border-box;
+}
+
+.navbarContents-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icon-drawer {
+  display: none;
+}
+
+.icon-drawer-loggedIn {
+  display: contents;
+  cursor: pointer;
+}
+
+.buttonTheme-login-register-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-register-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+@media screen and (max-width: 450px) {
+  .login-register-container,
+  .home-link {
+    display: none;
+  }
+
+  .icon-drawer,
+  .icon-drawer-loggedIn {
+    display: contents;
+    cursor: pointer;
+  }
+}
+
+.iconDrawer-tabLinks-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.tabLinks-container {
+  display: flex;
+  margin-left: 30px;
+  gap: 30px;
+}
+
+@media screen and (max-width: 450px) {
+  .tabLinks-container {
+    display: none;
+  }
+}
