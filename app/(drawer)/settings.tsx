@@ -1,12 +1,12 @@
-// ./app/(drawer)/_layout.tsx
-import { Drawer } from "expo-router/drawer";
+// ./app/(drawer)/settings.tsx
+import { Text, View } from "react-native";
 
-const DrawerLayout = () => {
+const Settings = () => {
   return (
-    <Drawer>
-      <Drawer.Screen name="settings" />
-    </Drawer>
+    <View>
+      <Text>Settings Screen</Text>
+    </View>
   );
 };
 
-export default DrawerLayout;
+export default Settings;
