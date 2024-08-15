@@ -4,3 +4,8 @@ export type IconType = {
   size?: number;
   style?: object;
 };
+
+export type DrawerMenuType = {
+  isDrawerOpen: boolean;
+  setIsDrawerOpen: (isDrawerOpen: boolean) => void;
+};

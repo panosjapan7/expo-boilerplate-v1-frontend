@@ -1,10 +1,14 @@
-// ./client/components/icons/IconDrawer.tsx
+// ./components/icons/IconDrawer.tsx
+import { View } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-
 import { IconType } from "../../types/types";
 
-const IconDrawer = ({ size, color }: IconType) => {
-  return <Ionicons name="menu" size={size} color={color} />;
+const IconDrawer = ({ color, size, style }: IconType) => {
+  return (
+    <View>
+      <Ionicons name="menu" color={color} size={size} style={style} />
+    </View>
+  );
 };
 
 export default IconDrawer;

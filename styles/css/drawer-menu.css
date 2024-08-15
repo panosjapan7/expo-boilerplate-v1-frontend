@@ -1,0 +1,33 @@
+/* ./styles/css/drawer-menu.css */
+.drawer-menu {
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  left: -250px;
+  transition: left 0.3s ease-in-out;
+  z-index: 30;
+}
+
+.drawer-menu.open {
+  left: 0;
+}
+
+.loggedOutMenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+/* .logout {
+  cursor: pointer;
+} */
