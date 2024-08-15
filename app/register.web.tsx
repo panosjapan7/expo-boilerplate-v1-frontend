@@ -1,7 +1,7 @@
 // ./app/register.web.tsx
 import "../styles/css/register.css";
 
-const Login = () => {
+const Register = () => {
   return (
     <div className="register-wrapper">
       <div className="contents-container">
@@ -11,4 +11,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

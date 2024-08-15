@@ -22,16 +22,16 @@
   display: none;
 }
 
-.icon-drawer-loggedIn {
+/* .icon-drawer-loggedIn {
   display: contents;
   cursor: pointer;
-}
+} */
 
-.buttonTheme-login-register-container {
+/* .buttonTheme-login-register-container {
   display: flex;
   align-items: center;
   gap: 20px;
-}
+} */
 
 .login-register-container {
   display: flex;
@@ -45,14 +45,25 @@
     display: none;
   }
 
+  .icon-drawer {
+    display: contents;
+    cursor: pointer;
+  }
+}
+/* @media screen and (max-width: 450px) {
+  .login-register-container,
+  .home-link {
+    display: none;
+  }
+
   .icon-drawer,
   .icon-drawer-loggedIn {
     display: contents;
     cursor: pointer;
   }
-}
+} */
 
-.iconDrawer-tabLinks-container {
+/* .iconDrawer-tabLinks-container {
   display: flex;
   align-items: center;
   gap: 30px;
@@ -68,4 +79,4 @@
   .tabLinks-container {
     display: none;
   }
-}
+} */
