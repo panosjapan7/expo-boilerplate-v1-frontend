@@ -5,6 +5,12 @@ export type IconType = {
   style?: object;
 };
 
+export type ButtonCloseModalType = {
+  color?: string;
+  size?: number;
+  style?: object;
+};
+
 export type DrawerMenuType = {
   isDrawerOpen: boolean;
   setIsDrawerOpen: (isDrawerOpen: boolean) => void;
