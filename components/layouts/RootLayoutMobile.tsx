@@ -19,6 +19,7 @@ const RootLayoutMobile = () => {
             headerLeft: () => <ButtonCloseModal size={22} />,
           }}
         />
+        <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
       </Stack>
     </View>
   );
