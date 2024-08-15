@@ -1,23 +1,13 @@
 // ./app/_layout.tsx
-import { StyleSheet, View } from "react-native";
-import { Stack } from "expo-router";
+import { Platform } from "react-native";
 
-const RootLayoutMobile = () => {
+import RootLayoutMobile from "../components/layouts/RootLayoutMobile";
+import RootLayoutWeb from "../components/layouts/RootLayoutWeb";
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerTitle: "Home" }} />
-        <Stack.Screen name="login" options={{ headerTitle: "Login" }} />
-        <Stack.Screen name="register" options={{ headerTitle: "Register" }} />
-      </Stack>
-    </View>
+    <>{Platform.OS === "web" ? <RootLayoutWeb /> : <RootLayoutMobile />}</>
   );
 };
 
-export default RootLayoutMobile;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+export default App;
