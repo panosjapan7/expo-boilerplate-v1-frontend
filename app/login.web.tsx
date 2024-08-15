@@ -1,12 +1,16 @@
 // ./app/login.web.tsx
-import { MouseEvent } from "react";
+import { MouseEvent, useContext } from "react";
 import { router } from "expo-router";
 
+import { AuthContext } from "../contexts/AuthContext";
 import "../styles/css/login.css";
 
 const Login = () => {
+  const { setIsLoggedIn } = useContext(AuthContext);
+
   const handleLogin = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
+    setIsLoggedIn(true);
     router.push("/settings");
   };
 
