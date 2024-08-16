@@ -1,0 +1,26 @@
+/* ./client/styles/css/hidden.css */
+.hidden-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+  /* justify-content: flex-start; */
+
+  min-height: calc(100vh - 60px);
+  height: auto;
+  overflow: auto;
+  margin-top: 60px; /* Same height as NavBar */
+  gap: 20px;
+}
+
+.contents-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
