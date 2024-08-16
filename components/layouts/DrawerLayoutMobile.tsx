@@ -6,6 +6,9 @@ import {
   DrawerItem,
   DrawerContentComponentProps,
 } from "@react-navigation/drawer";
+import IconFeed from "../icons/IconFeed";
+import IconLogout from "../icons/IconLogout";
+import IconSettings from "../icons/IconSettings";
 
 const CustomDrawer = (props: DrawerContentComponentProps) => {
   return (
@@ -13,10 +16,14 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
       <DrawerItem
         label={"Feed"}
         onPress={() => router.push("/(drawer)/(tabs)/feed")}
+        icon={() => <IconFeed size={18} style={{ marginLeft: 20 }} />}
+        labelStyle={{ marginLeft: -15 }}
       />
       <DrawerItem
         label={"Settings"}
         onPress={() => router.push("/(drawer)/settings")}
+        icon={() => <IconSettings size={18} style={{ marginLeft: 20 }} />}
+        labelStyle={{ marginLeft: -15 }}
       />
       <DrawerItem
         label={"Log out"}
@@ -24,6 +31,8 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
           router.dismissAll();
           router.replace("/");
         }}
+        icon={() => <IconLogout size={18} style={{ marginLeft: 20 }} />}
+        labelStyle={{ marginLeft: -15 }}
       />
     </DrawerContentScrollView>
   );
