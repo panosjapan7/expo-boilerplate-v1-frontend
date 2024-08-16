@@ -6,6 +6,8 @@ const Home = () => {
   return (
     <View>
       <Text>Home Screen</Text>
+      <Text style={{ fontFamily: "Inter_300Light" }}>Inter Light</Text>
+      <Text style={{ fontFamily: "Inter_900Black" }}>Inter Black</Text>
       <Pressable onPress={() => router.push("/login")}>
         <Text>Go to Login Screen</Text>
       </Pressable>
