@@ -1,11 +1,54 @@
 /* ./styles/css/globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap");
+
+:root {
+  --font-family-light: "Inter", sans-serif;
+  --font-family-regular: "Inter", sans-serif;
+  --font-family-medium: "Inter", sans-serif;
+  --font-family-bold: "Inter", sans-serif;
+  --font-family-black: "Inter", sans-serif;
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--font-family-regular);
+  font-weight: var(--font-weight-regular);
 }
 
 a {
   text-decoration: none;
+}
+
+.textLight {
+  font-family: var(--font-family-light);
+  font-weight: var(--font-weight-light);
+}
+
+.textRegular {
+  font-family: var(--font-family-regular);
+  font-weight: var(--font-weight-regular);
+}
+
+.textMedium {
+  font-family: var(--font-family-medium);
+  font-weight: var(--font-weight-medium);
+}
+
+.textBold {
+  font-family: var(--font-family-bold);
+  font-weight: var(--font-weight-bold);
+}
+
+.textBlack {
+  font-family: var(--font-family-black);
+  font-weight: var(--font-weight-black);
 }

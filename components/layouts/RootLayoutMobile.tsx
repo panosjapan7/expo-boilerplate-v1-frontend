@@ -1,10 +1,40 @@
 // ./components/layouts/RootLayoutMobile.tsx
+import { useEffect } from "react";
 import { StyleSheet, View } from "react-native";
 import { Stack } from "expo-router";
+import { useFonts } from "expo-font";
+import * as SpashScreen from "expo-splash-screen";
+import {
+  Inter_300Light,
+  Inter_400Regular,
+  Inter_500Medium,
+  Inter_700Bold,
+  Inter_900Black,
+} from "@expo-google-fonts/inter";
 
 import ButtonCloseModal from "../buttons/ButtonCloseModal";
 
+SpashScreen.preventAutoHideAsync();
+
 const RootLayoutMobile = () => {
+  const [fontsLoaded, error] = useFonts({
+    Inter_300Light,
+    Inter_400Regular,
+    Inter_500Medium,
+    Inter_700Bold,
+    Inter_900Black,
+  });
+
+  useEffect(() => {
+    if (fontsLoaded || error) {
+      SpashScreen.hideAsync();
+    }
+  }, [fontsLoaded, error]);
+
+  if (!fontsLoaded && !error) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <Stack>
