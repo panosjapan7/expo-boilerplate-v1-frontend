@@ -4,7 +4,7 @@ import { Link, router } from "expo-router";
 
 const Login = () => {
   const handleLogin = () => {
-    router.replace("/(drawer)/settings");
+    router.replace("/(drawer)/(tabs)/feed");
   };
 
   return (

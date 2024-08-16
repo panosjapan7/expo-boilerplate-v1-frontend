@@ -11,7 +11,7 @@ const Login = () => {
   const handleLogin = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setIsLoggedIn(true);
-    router.push("/settings");
+    router.push("/(drawer)/(tabs)/feed");
   };
 
   return (

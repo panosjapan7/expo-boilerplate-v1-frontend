@@ -11,6 +11,10 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
   return (
     <DrawerContentScrollView {...props}>
       <DrawerItem
+        label={"Feed"}
+        onPress={() => router.push("/(drawer)/(tabs)/feed")}
+      />
+      <DrawerItem
         label={"Settings"}
         onPress={() => router.push("/(drawer)/settings")}
       />
@@ -27,10 +31,17 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
 
 const DrawerLayout = () => {
   return (
-    <Drawer drawerContent={(props) => <CustomDrawer {...props} />}>
+    <Drawer
+      drawerContent={(props) => <CustomDrawer {...props} />}
+      screenOptions={{ headerShown: false }}
+    >
       <Drawer.Screen
         name="settings"
-        options={{ headerTitle: "Settings", drawerLabel: "Settings" }}
+        options={{
+          headerTitle: "Settings",
+          drawerLabel: "Settings",
+          headerShown: true,
+        }}
       />
     </Drawer>
   );
