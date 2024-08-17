@@ -1,4 +1,4 @@
-// ./app/(drawer)/(tabs)/_layout.tsx
+// ./components/layouts/TabsLayoutMobile.tsx
 import { Tabs } from "expo-router";
 import { DrawerToggleButton } from "@react-navigation/drawer";
 
@@ -7,7 +7,13 @@ import IconProfile from "../icons/IconProfile";
 
 const TabsLayoutMobile = () => {
   return (
-    <Tabs screenOptions={{ headerLeft: () => <DrawerToggleButton /> }}>
+    <Tabs
+      screenOptions={{
+        headerLeft: () => <DrawerToggleButton />,
+        headerShadowVisible: false,
+        tabBarStyle: { borderTopWidth: 0, elevation: 0 },
+      }}
+    >
       <Tabs.Screen
         name="feed"
         options={{

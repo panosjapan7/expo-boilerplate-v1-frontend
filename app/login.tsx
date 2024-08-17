@@ -2,19 +2,23 @@
 import { Pressable, Text, View } from "react-native";
 import { Link, router } from "expo-router";
 
+import { useGlobalStyles } from "../styles/stylesheets/globalStyles";
+
 const Login = () => {
+  const { globalStyles } = useGlobalStyles();
+
   const handleLogin = () => {
     router.replace("/(drawer)/(tabs)/feed");
   };
 
   return (
-    <View>
-      <Text>Login Screen</Text>
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.textBlack}>Login Screen</Text>
       <Pressable onPress={handleLogin}>
-        <Text>Log in</Text>
+        <Text style={globalStyles.textRegular}>Log in</Text>
       </Pressable>
       <Link href="/reset-password">
-        <Text>Forgot password?</Text>
+        <Text style={globalStyles.textRegular}>Forgot password?</Text>
       </Link>
     </View>
   );

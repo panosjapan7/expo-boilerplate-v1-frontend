@@ -42,7 +42,7 @@ const DrawerLayout = () => {
   return (
     <Drawer
       drawerContent={(props) => <CustomDrawer {...props} />}
-      screenOptions={{ headerShown: false }}
+      screenOptions={{ headerShown: false, headerShadowVisible: false }}
     >
       <Drawer.Screen
         name="settings"

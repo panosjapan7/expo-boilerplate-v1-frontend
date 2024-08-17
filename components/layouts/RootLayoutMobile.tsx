@@ -12,6 +12,7 @@ import {
   Inter_900Black,
 } from "@expo-google-fonts/inter";
 
+import { useGlobalStyles } from "../../styles/stylesheets/globalStyles";
 import ButtonCloseModal from "../buttons/ButtonCloseModal";
 
 SpashScreen.preventAutoHideAsync();
@@ -24,6 +25,7 @@ const RootLayoutMobile = () => {
     Inter_700Bold,
     Inter_900Black,
   });
+  const { globalStyles } = useGlobalStyles();
 
   useEffect(() => {
     if (fontsLoaded || error) {
@@ -36,8 +38,8 @@ const RootLayoutMobile = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <Stack>
+    <View style={globalStyles.rootContainer}>
+      <Stack screenOptions={{ headerShadowVisible: false }}>
         <Stack.Screen name="index" options={{ headerTitle: "Home" }} />
         <Stack.Screen name="login" options={{ headerTitle: "Login" }} />
         <Stack.Screen name="register" options={{ headerTitle: "Register" }} />
