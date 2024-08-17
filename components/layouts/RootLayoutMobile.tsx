@@ -37,7 +37,7 @@ const ThemeStyledStack = () => {
 
   const screenOptions = {
     headerShadowVisible: false,
-    headerRight: () => <ButtonTheme />,
+    headerRight: () => <ButtonTheme size={22} color={themeHeaderTextColor} />,
     headerStyle: {
       backgroundColor: theme === "light" ? Colors.white : Colors.gray600,
     },

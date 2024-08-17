@@ -9,7 +9,7 @@ export type AuthProviderType = {
   children: ReactNode;
 };
 
-export type ButtonCloseModalType = {
+export type ButtonType = {
   color?: string;
   size?: number;
   style?: object;
