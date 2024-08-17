@@ -9,12 +9,6 @@ export type AuthProviderType = {
   children: ReactNode;
 };
 
-export type IconType = {
-  color?: string;
-  size?: number;
-  style?: object;
-};
-
 export type ButtonCloseModalType = {
   color?: string;
   size?: number;
@@ -24,4 +18,17 @@ export type ButtonCloseModalType = {
 export type DrawerMenuType = {
   isDrawerOpen: boolean;
   setIsDrawerOpen: (isDrawerOpen: boolean) => void;
+};
+
+export type IconType = {
+  color?: string;
+  size?: number;
+  style?: object;
+};
+
+export type ThemeType = "light" | "dark";
+
+export type ThemeContextType = {
+  theme: ThemeType;
+  toggleTheme: () => void;
 };
