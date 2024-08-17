@@ -33,6 +33,7 @@ const StatusBarComponent = () => {
 
 const ThemeStyledStack = () => {
   const { theme } = useThemeContext();
+  const { themeHeaderTextColor } = useGlobalStyles();
 
   const screenOptions = {
     headerShadowVisible: false,
@@ -57,8 +58,9 @@ const ThemeStyledStack = () => {
           options={{
             presentation: "modal",
             headerTitle: "Rest Password",
-            headerLeft: () => <ButtonCloseModal size={22} />,
-            // headerRight: undefined,
+            headerLeft: () => (
+              <ButtonCloseModal size={22} color={themeHeaderTextColor} />
+            ),
           }}
         />
         <Stack.Screen name="(drawer)" options={{ headerShown: false }} />
