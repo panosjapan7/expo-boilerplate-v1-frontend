@@ -1,11 +1,14 @@
 // ./app/(drawer)/(tabs)/hidden.web.tsx
 import "../../../styles/css/hidden.css";
+import { useGlobalStyles } from "../../../styles/stylesheets/globalStyles";
 
 const Feed = () => {
+  const { themeTextColor } = useGlobalStyles();
+
   return (
     <div className="hidden-wrapper">
       <div className="contents-container">
-        <p>Hidden Screen (web)</p>
+        <p style={{ color: themeTextColor }}>Hidden Screen (web)</p>
       </div>
     </div>
   );

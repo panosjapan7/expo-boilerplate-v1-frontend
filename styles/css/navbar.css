@@ -27,11 +27,11 @@
   cursor: pointer;
 }
 
-/* .buttonTheme-login-register-container {
+.buttonTheme-login-register-container {
   display: flex;
   align-items: center;
   gap: 20px;
-} */
+}
 
 .login-register-container {
   display: flex;

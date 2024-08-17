@@ -1,11 +1,14 @@
 // ./app/(drawer)/(tabs)/profile.web.tsx
 import "../../../styles/css/profile.css";
+import { useGlobalStyles } from "../../../styles/stylesheets/globalStyles";
 
 const Feed = () => {
+  const { themeTextColor } = useGlobalStyles();
+
   return (
     <div className="profile-wrapper">
       <div className="contents-container">
-        <p>Profile Screen (web)</p>
+        <p style={{ color: themeTextColor }}>Profile Screen (web)</p>
       </div>
     </div>
   );
