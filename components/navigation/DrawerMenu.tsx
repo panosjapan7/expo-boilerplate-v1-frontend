@@ -4,6 +4,7 @@ import { router } from "expo-router";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { DrawerMenuType } from "../../types/types";
+import { useGlobalStyles } from "../../styles/stylesheets/globalStyles";
 import "../../styles/css/drawer-menu.css";
 import IconHome from "../icons/IconHome";
 import IconLogin from "../icons/IconLogin";
@@ -14,6 +15,7 @@ import IconSettings from "../icons/IconSettings";
 import IconLogout from "../icons/IconLogout";
 
 const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
+  const { themeBackgroundColor, themeHeaderTextColor } = useGlobalStyles();
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
 
   const handleLogout = (e: React.MouseEvent<HTMLParagraphElement>) => {
@@ -26,7 +28,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
   return (
     <div
       className={`drawer-menu ${isDrawerOpen ? "open" : ""}`}
-      style={{ backgroundColor: "white" }}
+      style={{ backgroundColor: themeBackgroundColor }}
     >
       {isLoggedIn ? (
         <ul className="loggedInmenu">
@@ -37,7 +39,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
             //   borderRadius: 5,
             // }}
           >
-            <IconFeed size={17} />
+            <IconFeed color={themeHeaderTextColor} size={17} />
             <a
               href="/feed"
               onClick={(e) => {
@@ -45,6 +47,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
                 setIsDrawerOpen(!isDrawerOpen);
                 router.push("/feed");
               }}
+              style={{ color: themeHeaderTextColor }}
             >
               Feed
             </a>
@@ -56,7 +59,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
             //   borderRadius: 5,
             // }}
           >
-            <IconProfile size={17} />
+            <IconProfile color={themeHeaderTextColor} size={17} />
             <a
               href="/profile"
               onClick={(e) => {
@@ -64,6 +67,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
                 setIsDrawerOpen(!isDrawerOpen);
                 router.push("/profile");
               }}
+              style={{ color: themeHeaderTextColor }}
             >
               Profile
             </a>
@@ -75,7 +79,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
             //   borderRadius: 5,
             // }}
           >
-            <IconSettings size={17} />
+            <IconSettings color={themeHeaderTextColor} size={17} />
             <a
               href="/settings"
               onClick={(e) => {
@@ -83,13 +87,18 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
                 setIsDrawerOpen(!isDrawerOpen);
                 router.push("/settings");
               }}
+              style={{ color: themeHeaderTextColor }}
             >
               Settings
             </a>
           </li>
           <li className="menu-item-container" style={{ padding: 10 }}>
-            <IconLogout size={17} />
-            <p className="logout" onClick={handleLogout}>
+            <IconLogout color={themeHeaderTextColor} size={17} />
+            <p
+              className="logout"
+              onClick={handleLogout}
+              style={{ color: themeHeaderTextColor }}
+            >
               Log out
             </p>
           </li>
@@ -103,7 +112,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
               borderRadius: 5,
             }}
           >
-            <IconHome size={17} />
+            <IconHome color={themeHeaderTextColor} size={17} />
             <a
               href="/"
               onClick={(e) => {
@@ -111,6 +120,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
                 setIsDrawerOpen(!isDrawerOpen);
                 router.push("/");
               }}
+              style={{ color: themeHeaderTextColor }}
             >
               Home
             </a>
@@ -122,7 +132,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
               borderRadius: 5,
             }}
           >
-            <IconLogin size={19} />
+            <IconLogin color={themeHeaderTextColor} size={19} />
             <a
               href="/login"
               onClick={(e) => {
@@ -130,6 +140,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
                 setIsDrawerOpen(!isDrawerOpen);
                 router.push("/login");
               }}
+              style={{ color: themeHeaderTextColor }}
             >
               Log in
             </a>
@@ -141,7 +152,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
               borderRadius: 5,
             }}
           >
-            <IconRegister size={17} />
+            <IconRegister color={themeHeaderTextColor} size={17} />
             <a
               href="/register"
               onClick={(e) => {
@@ -149,6 +160,7 @@ const DrawerMenu = ({ isDrawerOpen, setIsDrawerOpen }: DrawerMenuType) => {
                 setIsDrawerOpen(!isDrawerOpen);
                 router.push("/register");
               }}
+              style={{ color: themeHeaderTextColor }}
             >
               Register
             </a>
