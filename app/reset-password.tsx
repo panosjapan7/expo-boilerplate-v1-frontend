@@ -1,11 +1,20 @@
 // ./app/reset-password.tsx
-import { Text, View } from "react-native";
+import { Platform, StatusBar, Text, View } from "react-native";
+
+import { useGlobalStyles } from "../styles/stylesheets/globalStyles";
 
 const ResetPassword = () => {
+  const { globalStyles } = useGlobalStyles();
+
   return (
-    <View>
-      <Text>Reset Password Screen</Text>
-    </View>
+    <>
+      <StatusBar
+        barStyle={Platform.OS === "ios" ? "light-content" : "dark-content"}
+      />
+      <View style={globalStyles.container}>
+        <Text style={globalStyles.textBlack}>Reset Password Screen</Text>
+      </View>
+    </>
   );
 };
 
