@@ -1,12 +1,11 @@
 // ./app/reset-password.tsx
-import { Platform, StatusBar, Text, View } from "react-native";
+import { Platform, StatusBar } from "react-native";
 
 import { useThemeContext } from "../contexts/ThemeContext";
-import { useGlobalStyles } from "../styles/stylesheets/globalStyles";
+import FormResetPasswordMobile from "../components/forms/FormResetPasswordMobile";
 
 const ResetPassword = () => {
   const { theme } = useThemeContext();
-  const { globalStyles } = useGlobalStyles();
 
   return (
     <>
@@ -20,9 +19,7 @@ const ResetPassword = () => {
         }
         key={theme}
       />
-      <View style={globalStyles.container}>
-        <Text style={globalStyles.textBlack}>Reset Password Screen</Text>
-      </View>
+      <FormResetPasswordMobile />
     </>
   );
 };

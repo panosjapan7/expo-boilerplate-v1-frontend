@@ -1,16 +1,8 @@
 // ./app/register.tsx
-import { Text, View } from "react-native";
-
-import { useGlobalStyles } from "../styles/stylesheets/globalStyles";
+import FormRegisterMobile from "../components/forms/FormRegisterMobile";
 
 const Register = () => {
-  const { globalStyles } = useGlobalStyles();
-
-  return (
-    <View style={globalStyles.container}>
-      <Text style={globalStyles.textBlack}>Register Screen</Text>
-    </View>
-  );
+  return <FormRegisterMobile />;
 };
 
 export default Register;
