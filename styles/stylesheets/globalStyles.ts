@@ -66,6 +66,33 @@ export const useGlobalStyles = () => {
       backgroundColor: themeBackgroundColor,
     },
 
+    // BUTTONS
+    button: {
+      width: "90%",
+      height: 40,
+      backgroundColor: buttonBackgroundColor,
+      borderRadius: buttonBorderRadius,
+      marginVertical: 10,
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    buttonTextMedium: {
+      color: Colors.white,
+      fontFamily: "Inter_500Medium",
+    },
+    buttonWithBorder: {
+      color: themeHeaderTextColor,
+      backgroundColor: themeBackgroundColor,
+      borderColor: themeHeaderTextColor,
+      borderWidth: buttonBorderWidth,
+      borderStyle: buttonBorderStyle,
+      paddingTop: 8,
+      paddingRight: 8,
+      paddingBottom: 8,
+      paddingLeft: 8,
+      borderRadius: borderRadius,
+    },
+
     // FORMS
     emailSentMessageContainer: {
       width: "90%",
