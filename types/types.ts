@@ -26,6 +26,8 @@ export type IconType = {
   style?: object;
 };
 
+export type StatusType = "error" | "idle" | "loading" | "success" | "warning";
+
 export type ThemeType = "light" | "dark";
 
 export type ThemeContextType = {
