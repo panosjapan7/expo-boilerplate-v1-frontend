@@ -1,5 +1,14 @@
 // ./contexts/ThemeContext.tsx
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
+import { Platform } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import { ThemeContextType, ThemeType } from "../types/types";
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -7,8 +16,38 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<ThemeType>("light");
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  useEffect(() => {
+    const loadTheme = async () => {
+      try {
+        const savedTheme =
+          Platform.OS === "web"
+            ? localStorage.getItem("theme")
+            : await AsyncStorage.getItem("theme");
+
+        if (savedTheme) {
+          setTheme(savedTheme as ThemeType);
+        }
+      } catch (error) {
+        console.log("Failed to load theme ", error);
+      }
+    };
+
+    loadTheme();
+  }, []);
+
+  const toggleTheme = async () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+
+    try {
+      if (Platform.OS === "web") {
+        localStorage.setItem("theme", newTheme);
+      } else {
+        await AsyncStorage.setItem("theme", newTheme);
+      }
+    } catch (error) {
+      console.log("Failed to load theme ", error);
+    }
   };
 
   return (
