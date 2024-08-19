@@ -1,5 +1,5 @@
 // ./styles/globalStyles.ts
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import { useThemeContext } from "../../contexts/ThemeContext";
 import { Colors } from "../colors";
 
@@ -145,6 +145,70 @@ export const useGlobalStyles = () => {
       marginTop: 10,
     },
 
+    // MODAL
+    modalScreenWrapper: {
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: 10,
+      height: "100%",
+      width: "100%",
+      position: "absolute",
+    },
+    modalBackground: {
+      backgroundColor: themeBackgroundColor,
+      width: "100%",
+      height: "100%",
+      opacity: 0.7,
+      zIndex: 10,
+    },
+    modalContainer: {
+      position: "absolute",
+      // top: "10%",
+      width: "85%",
+      height: "auto",
+      zIndex: 20,
+      opacity: 1,
+      backgroundColor: modalBackgroundColor,
+      borderRadius: modalBorderRadius,
+      paddingVertical: 25,
+      paddingLeft: 20,
+      borderColor: modalBorderColor,
+      borderWidth: modalBorderWidth,
+      borderStyle: modalBorderStyle,
+
+      shadowColor: shadowColor,
+      shadowOffset: shadowOffset,
+      shadowOpacity: shadowOpacity,
+      shadowRadius: shadowRadius,
+      elevation: shadowElevation,
+    },
+    modalCloseIconContainer: {
+      position: "absolute",
+      top: 10,
+      right: 10,
+    },
+    modalContentContainer: {
+      display: "flex",
+      flexDirection: "row",
+      gap: 10,
+      justifyContent: "flex-start",
+    },
+    modalTextContainer: {},
+    modalHeader: {
+      color: themeHeaderTextColor,
+      fontFamily: "Inter_700Bold",
+      fontSize: Platform.OS == "android" ? 18 : 16,
+      marginBottom: 5,
+    },
+    modalParagraph: {
+      color: themeHeaderTextColor,
+      fontFamily: "Inter_400Regular",
+      fontSize: 14,
+      width: "auto",
+      maxWidth: Platform.OS === "ios" ? "90%" : "95%",
+    },
+
     // TEXT
     textLight: {
       fontFamily: "Inter_300Light",
@@ -169,7 +233,24 @@ export const useGlobalStyles = () => {
   });
 
   return {
+    borderRadius,
+    borderWidth,
+    buttonBackgroundColor,
+    buttonBorderColor,
+    buttonBorderRadius,
+    buttonBorderStyle,
+    buttonBorderWidth,
     globalStyles,
+    inputBorderColor,
+    inputBorderRadius,
+    inputBorderStyle,
+    inputBorderWidth,
+    inputTextColor,
+    modalBackgroundColor,
+    modalBorderColor,
+    modalBorderRadius,
+    modalBorderStyle,
+    modalBorderWidth,
     tabBarItemInactiveColor,
     themeBackgroundColor,
     themeHeaderTextColor,
