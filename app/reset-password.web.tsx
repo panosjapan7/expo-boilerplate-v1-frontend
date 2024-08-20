@@ -1,14 +1,18 @@
-// ./app/reset-password.web.tsx
-import "../styles/css/reset-password.css";
+// ./client/app/reset-password.web.tsx
 import { useGlobalStyles } from "../styles/stylesheets/globalStyles";
+import "../styles/css/reset-password.css";
+import FormResetPasswordWeb from "../components/forms/FormResetPasswordWeb";
 
 const ResetPassword = () => {
-  const { themeTextColor } = useGlobalStyles();
+  const { themeBackgroundColor } = useGlobalStyles();
 
   return (
-    <div className="resetPassword-wrapper">
+    <div
+      className="resetPassword-wrapper"
+      style={{ backgroundColor: themeBackgroundColor }}
+    >
       <div className="contents-container">
-        <p style={{ color: themeTextColor }}>Reset Password Screen (web)</p>
+        <FormResetPasswordWeb />
       </div>
     </div>
   );

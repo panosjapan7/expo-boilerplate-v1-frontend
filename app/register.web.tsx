@@ -1,14 +1,16 @@
-// ./app/register.web.tsx
+import FormRegisterWeb from "../components/forms/FormRegisterWeb";
 import "../styles/css/register.css";
 import { useGlobalStyles } from "../styles/stylesheets/globalStyles";
 
 const Register = () => {
-  const { themeTextColor } = useGlobalStyles();
-
+  const { themeBackgroundColor } = useGlobalStyles();
   return (
-    <div className="register-wrapper">
+    <div
+      className="register-wrapper"
+      style={{ backgroundColor: themeBackgroundColor }}
+    >
       <div className="contents-container">
-        <p style={{ color: themeTextColor }}>Register Screen (web)</p>
+        <FormRegisterWeb />
       </div>
     </div>
   );
