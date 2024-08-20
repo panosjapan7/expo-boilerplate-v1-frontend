@@ -1,0 +1,94 @@
+/* ./styles/css/form.css */
+.form-container {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 495px) {
+  .form-container {
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
+  }
+}
+
+.form-header {
+  margin: 0;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.form-label-input-container {
+  max-width: 260px;
+  width: 100%;
+  position: relative;
+}
+
+.form-label-errorMessage {
+  display: inline-block;
+  font-size: 11px;
+}
+
+.form-input {
+  padding: 0.5rem;
+  margin: 5px 0 8px 0;
+  box-sizing: border-box;
+  background: none;
+  max-width: 260px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.form-input::placeholder {
+  color: #8e8e93;
+  opacity: 1;
+}
+
+.showHidePassword {
+  position: absolute;
+  cursor: pointer;
+  top: 32px;
+  right: 10px;
+}
+
+@media screen and (max-width: 250px) {
+  .showHidePassword {
+    display: none;
+  }
+}
+
+.form-submitButton {
+  max-width: 260px;
+  width: 100%;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.bottomLinksContainer {
+  margin-top: 20px;
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bottomLinksContainer a:hover {
+  text-decoration: underline;
+}
+
+.emailSentMessage {
+  max-width: 260px;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  color: rgb(18, 142, 18);
+  margin-top: 0px;
+}
