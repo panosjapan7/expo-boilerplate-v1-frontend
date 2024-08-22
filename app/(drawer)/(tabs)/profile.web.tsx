@@ -2,7 +2,7 @@
 import "../../../styles/css/profile.css";
 import { useGlobalStyles } from "../../../styles/stylesheets/globalStyles";
 
-const Feed = () => {
+const Profile = () => {
   const { themeTextColor } = useGlobalStyles();
 
   return (
@@ -14,4 +14,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default Profile;

@@ -2,7 +2,7 @@
 import "../../../styles/css/hidden.css";
 import { useGlobalStyles } from "../../../styles/stylesheets/globalStyles";
 
-const Feed = () => {
+const Hidden = () => {
   const { themeTextColor } = useGlobalStyles();
 
   return (
@@ -14,4 +14,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default Hidden;
