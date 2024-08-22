@@ -1,6 +1,5 @@
 // ./contexts/AuthContext.tsx
-import { ReactNode } from "react";
-import { createContext, useState } from "react";
+import { createContext, useState, ReactNode } from "react";
 
 type AuthContextType = {
   isLoggedIn: boolean;
