@@ -1,6 +1,14 @@
 // ./contexts/AuthContext.tsx
+import { ReactNode } from "react";
 import { createContext, useState } from "react";
-import { AuthContextType, AuthProviderType } from "../types/types";
+
+type AuthContextType = {
+  isLoggedIn: boolean;
+  setIsLoggedIn: (isLoggedIn: boolean) => void;
+};
+type AuthProviderType = {
+  children: ReactNode;
+};
 
 export const AuthContext = createContext<AuthContextType>({
   isLoggedIn: false,
