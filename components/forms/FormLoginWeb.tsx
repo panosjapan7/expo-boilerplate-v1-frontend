@@ -1,6 +1,5 @@
 // ./components/forms/FormLoginWeb.tsx
 import { MouseEvent, useContext, useEffect, useState } from "react";
-import { ActivityIndicator } from "react-native";
 import { router } from "expo-router";
 
 import { useGlobalStyles } from "../../styles/stylesheets/globalStyles";
@@ -15,6 +14,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { StatusType } from "../../types/types";
 import InputFormWeb from "../inputs/InputFormWeb";
 import ButtonSubmitFormWeb from "../buttons/ButtonSubmitFormWeb";
+import LoadingIndicator from "../indicators/LoadingIndicator";
 
 const FormLoginWeb = () => {
   const { setIsLoggedIn } = useContext(AuthContext);
@@ -57,7 +57,7 @@ const FormLoginWeb = () => {
   return (
     <>
       {status === "loading" ? (
-        <ActivityIndicator size={"large"} color={themeHeaderTextColor} />
+        <LoadingIndicator />
       ) : (
         <div
           className="form-container"

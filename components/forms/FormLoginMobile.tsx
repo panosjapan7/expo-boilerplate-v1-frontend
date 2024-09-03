@@ -1,7 +1,6 @@
 // ./components/forms/FormLoginMobile.tsx
 import { useEffect, useRef, useState } from "react";
 import {
-  ActivityIndicator,
   Keyboard,
   KeyboardAvoidingView,
   Platform,
@@ -24,6 +23,7 @@ import InputEmailMobile from "../inputs/InputEmailMobile";
 import InputPasswordMobile from "../inputs/InputPasswordMobile";
 import InputLabelMobile from "../inputs/InputLabelMobile";
 import ButtonSubmitFormMobile from "../buttons/ButtonSubmitFormMobile";
+import LoadingIndicator from "../indicators/LoadingIndicator";
 
 const FormLoginMobile = () => {
   const { globalStyles, themeHeaderTextColor } = useGlobalStyles();
@@ -67,9 +67,7 @@ const FormLoginMobile = () => {
     >
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         {status === "loading" ? (
-          <View style={globalStyles.container}>
-            <ActivityIndicator size={"large"} color={themeHeaderTextColor} />
-          </View>
+          <LoadingIndicator />
         ) : (
           <View style={globalStyles.container}>
             {/* Email */}
